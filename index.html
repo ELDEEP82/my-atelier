@@ -3,348 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hassan El-Deeb Atelier | فخامة تليق بكِ</title>
+    <title>خطة انطلاق الأتيليه 2026 | حسن الديب</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --gold: #d4af37;
-            --dark-gold: #b8860b;
-            --black: #1a1a1a;
+            --gold: #c5a059;
+            --dark: #121212;
+            --light-gold: #f4ece1;
             --white: #ffffff;
-            --cream: #fdfcf0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--light-gold); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: var(--cream);
-            color: var(--black);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, .brand {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Header --- */
-        header {
+        /* Background Design Elements */
+        body::before {
+            content: "2026";
             position: fixed;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: 0.5s;
-            background: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20vw;
+            font-weight: 900;
+            color: rgba(197, 160, 89, 0.05);
+            z-index: -1;
         }
 
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--gold);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1594553763261-3444647313a0?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* Header */
+        header {
             text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
             color: var(--white);
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
-
-        .btn-gold {
-            padding: 15px 40px;
-            background: var(--gold);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: 0.3s;
-            border: 2px solid var(--gold);
-        }
-
-        .btn-gold:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        /* --- Packages Section --- */
-        .section-padding { padding: 100px 10%; }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
+            border-radius: 0 0 50px 50px;
             margin-bottom: 50px;
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            position: absolute;
-            bottom: -10px;
-            right: 50%;
-            transform: translateX(50%);
-        }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); margin-bottom: 10px; }
+        header p { font-size: 1.2rem; opacity: 0.8; letter-spacing: 1px; }
 
-        .packages-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .package-card {
-            background: white;
-            padding: 40px;
+        /* Weekly Timeline */
+        .timeline { position: relative; padding: 20px 0; }
+        .week-card {
+            background: var(--white);
+            margin-bottom: 40px;
+            padding: 30px;
             border-radius: 20px;
-            text-align: center;
-            border: 1px solid #eee;
-            transition: 0.5s;
+            border-right: 8px solid var(--gold);
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
             position: relative;
-            overflow: hidden;
         }
 
-        .package-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .package-card i {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .package-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
-
-        .package-card ul {
-            list-style: none;
-            margin-bottom: 25px;
-            text-align: right;
-            display: inline-block;
-        }
-
-        .package-card ul li { margin-bottom: 10px; color: #666; }
-        .package-card ul li i { font-size: 1rem; margin-left: 10px; }
-
-        .vip-badge {
+        .week-card:hover { transform: scale(1.02); }
+        .week-number {
             background: var(--gold);
             color: white;
             padding: 5px 20px;
-            position: absolute;
-            top: 20px;
-            left: -30px;
-            transform: rotate(-45deg);
-            font-size: 0.8rem;
-        }
-
-        /* --- Promo Section --- */
-        .promo-banner {
-            background: var(--black);
-            color: var(--white);
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 20px;
-            margin: 50px 10%;
-        }
-
-        .promo-banner h2 { color: var(--gold); margin-bottom: 15px; }
-
-        /* --- WhatsApp Floating --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: #FFF;
             border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            animation: pulse 2s infinite;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .week-title { font-size: 1.8rem; margin-bottom: 20px; color: var(--dark); display: flex; align-items: center; gap: 10px; }
+
+        /* Sub-sections */
+        .sub-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+            border: 1px dashed var(--gold);
         }
 
-        /* --- Footer --- */
-        footer {
-            background: #111;
+        .sub-box h4 { color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+
+        /* Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pkg-item {
+            background: var(--dark);
             color: white;
+            padding: 20px;
+            border-radius: 15px;
             text-align: center;
-            padding: 50px 20px;
         }
 
-        .social-links a {
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: 0.3s;
+        .pkg-item.gold-pkg { background: var(--gold); }
+        .pkg-item.vip-pkg { border: 2px solid var(--gold); background: #1a1a1a; }
+        .pkg-item h5 { font-size: 1.3rem; margin-bottom: 10px; color: var(--gold); }
+        .pkg-item.gold-pkg h5 { color: white; }
+
+        /* Strategy Pills */
+        .strategy-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 50px;
         }
 
-        .social-links a:hover { color: white; }
+        .strat-card {
+            flex: 1;
+            min-width: 280px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
 
-        /* Responsive */
+        .strat-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+
+        /* Special Effects */
+        .fire-tag { color: #ff4d4d; font-weight: bold; }
+        .floating-wa {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 30px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000; transition: 0.3s;
+        }
+        .floating-wa:hover { transform: rotate(360deg) scale(1.1); }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { padding: 15px 20px; }
-            header.scrolled { padding: 10px 20px; }
+            header h1 { font-size: 2rem; }
+            .week-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header id="navbar">
-        <a href="#" class="logo">HASSAN ELDEEB</a>
-        <a href="https://wa.me/201234567890" class="btn-gold" style="padding: 10px 25px;">احجزي الآن</a>
+    <header class="animate__animated animate__fadeIn">
+        <div class="container">
+            <h1>HASSAN EL-DEEB ATELIER</h1>
+            <p>خطة الانطلاق الاستراتيجية | 2026 Market Dominance</p>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1 class="animate__animated animate__fadeInDown">أنتِ أيقونة ليلتك</h1>
-        <p class="animate__animated animate__fadeInUp">ليس مجرد فستان، بل حكاية فخامة ننسجها لتليق بجمالك الخاص في أهم يوم في حياتك.</p>
-        <a href="#packages" class="btn-gold animate__animated animate__fadeInUp animate__delay-1s">اكتشفي الباقات الملكية</a>
-    </section>
+    <div class="container">
 
-    <section class="section-padding" id="packages">
-        <h2 class="section-title">باقات التألق 2026</h2>
-        <div class="packages-container">
+        <div class="week-card animate__animated animate__fadeInRight">
+            <span class="week-number">الأسبوع الأول</span>
+            <h2 class="week-title">📅 تجهيز قوي + إثارة السوق</h2>
             
-            <div class="package-card animate-on-scroll">
-                <i class="fas fa-gem"></i>
-                <h3>باقة سيلفر</h3>
+            <div class="sub-box">
+                <h4><i class="fas fa-camera"></i> 1️⃣ تجهيز داخلي</h4>
                 <ul>
-                    <li><i class="fas fa-check"></i> فستان تصنيع راقي</li>
-                    <li><i class="fas fa-check"></i> تعديلات القياس مجانية</li>
-                    <li><i class="fas fa-check"></i> سعر مميز جداً</li>
+                    <li>تصوير 15–25 فستان تصوير احترافي (موديل + تفاصيل قماش + فيديو حركة)</li>
+                    <li>ترتيب الأتيليه وإظهار شكل راقي</li>
+                    <li>عمل كتالوج PDF بسيط أو ألبوم واتساب</li>
                 </ul>
-                <div><a href="#" class="btn-gold">اختيار السيلفر</a></div>
             </div>
 
-            <div class="package-card animate-on-scroll" style="border: 2px solid var(--gold);">
-                <i class="fas fa-crown"></i>
-                <h3>باقة جولد</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> فستان تصميم خاص</li>
-                    <li><i class="fas fa-check"></i> طقم إكسسوارات متكامل</li>
-                    <li><i class="fas fa-check"></i> تعديلات قياس دقيقة</li>
-                </ul>
-                <div><a href="#" class="btn-gold">اختيار الجولد</a></div>
+            <div class="sub-box">
+                <h4><i class="fas fa-tags"></i> 2️⃣ باقات وعروض جذابة</h4>
+                <div class="packages-grid">
+                    <div class="pkg-item">
+                        <h5>💎 سيلفر</h5>
+                        <p>فستان + تعديل بسيط = سعر مميز</p>
+                    </div>
+                    <div class="pkg-item gold-pkg">
+                        <h5>💎 جولد</h5>
+                        <p>فستان + تعديل + إكسسوارات</p>
+                    </div>
+                    <div class="pkg-item vip-pkg">
+                        <h5>💎 VIP</h5>
+                        <p>فستان + إكسسوارات + تاج + خصم صديقة</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="package-card animate-on-scroll">
-                <div class="vip-badge">الأكثر طلباً</div>
-                <i class="fas fa-star"></i>
-                <h3>باقة VIP الملكية</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> فستان + تاج ملكي + شنطة</li>
-                    <li><i class="fas fa-check"></i> خصم 10% لصديقة العروسة</li>
-                    <li><i class="fas fa-check"></i> تجربة قياس خاصة (شاي وشموع)</li>
-                </ul>
-                <div><a href="#" class="btn-gold">اختيار VIP</a></div>
+            <div class="sub-box">
+                <h4><i class="fas fa-fire"></i> 3️⃣ عرض افتتاح</h4>
+                <p class="fire-tag">🔥 خصم 15% لأول 20 عميلة</p>
+                <p class="fire-tag">🔥 "صاحبتك تاخد خصم 10% لو جيتي معاها"</p>
             </div>
-
         </div>
-    </section>
 
-    <section class="promo-banner animate-on-scroll">
-        <h2>عرض الافتتاح الحصري 🔥</h2>
-        <p>خصم 15% لأول 20 عميلة يحجزن في شهر مارس!</p>
-        <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">أو "هاتي صاحبتك وخدي خصم 10% إضافي"</p>
-    </section>
+        <div class="week-card animate__animated animate__fadeInRight" style="animation-delay: 0.2s;">
+            <span class="week-number">الأسبوع الثاني</span>
+            <h2 class="week-title">📱 انفجار تسويقي</h2>
+            <div class="sub-box">
+                <h4><i class="fab fa-instagram"></i> خطة المحتوى اليومي</h4>
+                <p>يوميًا: (بوست صورة + ريلز حركة + ستوري كواليس)</p>
+                <hr style="margin: 10px 0; opacity: 0.2;">
+                <p>💡 أفكار: تريندات 2026، إزاي تختاري فستان لطولك؟، ردود فعل العرايس.</p>
+            </div>
+            <div class="sub-box">
+                <h4><i class="fas fa-bullhorn"></i> إعلان ممول (الميزانية)</h4>
+                <p>100–200 جنيه يوميًا | استهداف بنات (18-35) | مهتمين بالأفراح ونطاق الأتيليه.</p>
+            </div>
+        </div>
 
-    <a href="https://wa.me/201234567890" class="whatsapp-float" target="_blank">
+        <div class="week-card animate__animated animate__fadeInRight" style="animation-delay: 0.4s;">
+            <span class="week-number">الأسبوع الثالث</span>
+            <h2 class="week-title">🤝 شراكات وتكبير الاسم</h2>
+            <div class="sub-box">
+                <h4><i class="fas fa-handshake"></i> تعاونات</h4>
+                <p>ميكب أرتيست + هير ستايلست + فوتوجرافر = Giveaway مشترك (فستان + ميكب مجاني).</p>
+            </div>
+            <div class="sub-box">
+                <h4><i class="fas fa-users"></i> نظام الإحالة (Referral)</h4>
+                <p>أي عميلة تجيب عميلة تاخد خصم 10% أو إكسسوارات هدية.</p>
+            </div>
+        </div>
+
+        <div class="week-card animate__animated animate__fadeInRight" style="animation-delay: 0.6s;">
+            <span class="week-number">الأسبوع الرابع</span>
+            <h2 class="week-title">💰 ضغط مبيعات</h2>
+            <div class="sub-box">
+                <p><i class="fas fa-bolt"></i> <strong>عرض نهاية الشهر:</strong> خصم 3 أيام فقط أو "احجزي بنص المبلغ".</p>
+                <p><i class="fas fa-video"></i> <strong>Live بيع مباشر:</strong> عرض الفساتين والرد الفوري.</p>
+                <p><i class="fab fa-whatsapp"></i> <strong>Retargeting:</strong> رسائل للعملاء السابقين بالموديلات الجديدة.</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin: 60px 0 30px; font-family: 'Playfair Display'; font-size: 2.5rem;">استراتيجيات النجاح 💡</h2>
+        <div class="strategy-container">
+            <div class="strat-card">
+                <i class="fas fa-heart"></i>
+                <h3>الإحساس مش السعر</h3>
+                <p>العميلة بتشتري إحساس إنها مميزة وشبه المشاهير.</p>
+            </div>
+            <div class="strat-card">
+                <i class="fas fa-music"></i>
+                <h3>أتيليه مش محل</h3>
+                <p>شموع، ميوزك هادية، تعامل راقي، وتجربة قياس ممتعة.</p>
+            </div>
+            <div class="strat-card">
+                <i class="fas fa-magic"></i>
+                <h3>قوة الصورة</h3>
+                <p>تصوير قوي يبيع فستان متوسط، تصوير ضعيف يقتل فستان جامد.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px; background: var(--dark); color: white; margin-top: 50px;">
+        <p>تم التصميم بواسطة حسن الديب - Agreology Tech Stack</p>
+    </footer>
+
+    <a href="https://wa.me/201234567890" class="floating-wa">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer>
-        <h2 style="color: var(--gold); margin-bottom: 20px;">Hassan El-Deeb Atelier</h2>
-        <p style="margin-bottom: 20px;">تجربة فريدة، إحساس مختلف، وجمال لا ينسى.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 جميع الحقوق محفوظة - تصميم AGREOLOGY AI</p>
-    </footer>
-
     <script>
-        // تغيير شكل الهيدر عند السكرول
-        window.onscroll = function() {
-            var navbar = document.getElementById("navbar");
-            if (window.pageYOffset > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        };
-
-        // أنيميشن الظهور عند السكرول
-        const observerOptions = {
-            threshold: 0.2
-        };
-
+        // أنيميشن بسيط عند ظهور العناصر
+        const cards = document.querySelectorAll('.week-card');
+        const options = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    entry.target.style.opacity = 1;
                 }
             });
-        }, observerOptions);
+        }, options);
 
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-            observer.observe(el);
-        });
+        cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>
